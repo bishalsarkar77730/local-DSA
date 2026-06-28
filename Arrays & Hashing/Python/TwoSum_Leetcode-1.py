@@ -9,10 +9,11 @@
 #     if list is empty
 # ]
 
-nums = [2, 7, 11, 15]
-target = 9
+nums = [3, 3]
+target = 6
 
 
+# Bruteforce
 def twosum():
     length = len(nums)
     if length <= 0:
@@ -26,4 +27,18 @@ def twosum():
                     return
 
 
-twosum()
+# twosum()
+
+# hashmap
+def twosum_hashmap():
+    seen = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in seen:
+            print([seen[complement], i])
+            return
+        seen[nums[i]] = i
+    return []
+
+
+twosum_hashmap()

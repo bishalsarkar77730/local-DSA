@@ -18,13 +18,11 @@ nums = [-3, -1, -2]
 
 
 def maximum_sum():
-    max_sum = float("-inf")  # negative infinity — handles the all-negatives trap
-    for i in range(len(nums)):  # i = start of the chunk
-        current_sum = 0  # reset the running total for each new start
-        for j in range(
-            i, len(nums)
-        ):  # j = end of the chunk, starts AT i (chunk of size 1)
-            current_sum += nums[j]  # extend the chunk by one element, add its value
+    max_sum = float("-inf")
+    for i in range(len(nums)):
+        current_sum = 0
+        for j in range(i, len(nums)):
+            current_sum += nums[j]
             if current_sum > max_sum:
                 max_sum = current_sum
     print(max_sum)
