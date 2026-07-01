@@ -24,5 +24,5 @@ const valid_palindrome = (s) => {
       return skip_left || skip_right;
     }
   }
-  return True;
+  return true;
 };
